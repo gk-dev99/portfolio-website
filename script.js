@@ -1,3 +1,4 @@
+// ===== SCROLL ANIMATION =====
 const sections = document.querySelectorAll('.hidden');
 
 const observer = new IntersectionObserver((entries) => {
@@ -11,4 +12,25 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach((section) => {
   observer.observe(section);
 });
-console.log("working");
+
+// ===== NAVBAR ACTIVE LINK =====
+const allSections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  allSections.forEach((section) => {
+    const sectionTop = section.offsetTop - 100;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
