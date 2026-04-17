@@ -34,3 +34,21 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+const topBtn = document.getElementById("topBtn");
+
+// scroll pe show/hide
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    topBtn.style.display = "block";
+  } else {
+    topBtn.style.display = "none";
+  }
+});
+
+// click pe upar jao
+topBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});

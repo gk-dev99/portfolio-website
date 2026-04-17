@@ -198,3 +198,15 @@ section {
 .nav-links a.active {
   color: #38bdf8;
 }
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 18px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 5px;
+  display: none;
+  cursor: pointer;
+}
